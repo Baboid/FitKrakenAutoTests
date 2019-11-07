@@ -1,7 +1,7 @@
 Feature: Edit membership
 
   @EditMembershipSessions
-  Scenario: A user attempts to create a new membership
+  Scenario: A user attempts to edit the number of sessions
     Given the user is logged in
     When the user clicks on the create new member icon
     And the user provides the name surname and email

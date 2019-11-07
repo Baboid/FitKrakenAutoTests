@@ -1,6 +1,6 @@
 Feature: Edit member info
 
-@ShitSon
+@EditMemberInfoTest
 Scenario: A user atttempts to edit the members info
 Given the user is logged in
 When the user click on the edit option

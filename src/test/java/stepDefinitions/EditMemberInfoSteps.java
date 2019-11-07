@@ -28,14 +28,17 @@ public class EditMemberInfoSteps extends Base {
     @And("^provides the new name and surname$")
     public void provides_the_new_name_and_surname() throws InterruptedException{
         mp = new MembersPage(driver);
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        WebElement elem1 = mp.getMemberNameField();
-        js.executeScript("arguments[0].value = ''", elem1);
-        Thread.sleep(4000);
+        mp.getMemberNameField().clear();
+        System.out.println(prop);
         mp.getMemberNameField().sendKeys(createNewMemberName());
-        WebElement elem2 = mp.getMemberSurnameField();
-        js.executeScript("arguments[0].value = ''", elem2);
-        Thread.sleep(4000);
+//        JavascriptExecutor js = (JavascriptExecutor)driver;
+//        WebElement elem1 = mp.getMemberNameField();
+//        js.executeScript("arguments[0].value = ''", elem1);
+//        Thread.sleep(4000);
+//        mp.getMemberNameField().sendKeys(createNewMemberName());
+//        WebElement elem2 = mp.getMemberSurnameField();
+//        js.executeScript("arguments[0].value = ''", elem2);
+//        Thread.sleep(4000);
         mp.getMemberSurnameField().sendKeys(prop.getProperty("UpdatedSurname"));
     }
 

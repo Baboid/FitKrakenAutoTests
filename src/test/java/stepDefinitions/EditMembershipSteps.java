@@ -16,14 +16,12 @@ public class EditMembershipSteps extends Base {
 
     MembersPage mp;
     MemberCardPage mcp;
-    WebDriverWait wait = new WebDriverWait(driver, 5);
 
     @And("^the user provides the membership details without the sessions$")
     public void the_user_provides_the_membership_details_without_the_sessions(){
         mp = new MembersPage(driver);
         Select s3 = new Select(mp.getGroupDropdown());
         s3.selectByValue("performance");
-        //wait.until(ExpectedCondition.visibilityOfElementLocated(By.xpath("//input[@id='dateFrom']")));
         mp.getValidDateFrom().sendKeys(prop.getProperty("NewMembershipValidDateFrom"));
         mp.getValidDateTo().sendKeys(prop.getProperty("NewMembershipValidDateTo"));
         mp.getSaveMembershipButton().click();
@@ -40,12 +38,15 @@ public class EditMembershipSteps extends Base {
     @And("^provides the number of sessions$")
     public void provides_the_number_of_sessions() {
         mp = new MembersPage(driver);
-        mp.getNumberOfSessions().sendKeys(prop.getProperty("NewMembershipNumberOfSessions"));
+        String s1 = prop.getProperty("NewMembershipNumberOfSessions");
+        mp.getNumberOfSessions().sendKeys(s1);
+        mp.getSaveMembershipButton().click();
     }
 
     @Then("^the user should be presented with the membership containing the correct number of sessions$")
-    public void the_user_should_be_presented_with_the_membership_containing_the_correct_number_of_sessions() {
+    public void the_user_should_be_presented_with_the_membership_containing_the_correct_number_of_sessions() throws InterruptedException{
         mcp = new MemberCardPage(driver);
+        Thread.sleep(3000);
         Assert.assertEquals(mcp.getLastSession().getText(), "10");
     }
 }

@@ -34,7 +34,7 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- Needed by junit -->
+
 		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
@@ -42,14 +42,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
@@ -62,7 +60,7 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.141.59</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.codearte.jfairy/jfairy -->
+
 		<dependency>
 			<groupId>io.codearte.jfairy</groupId>
 			<artifactId>jfairy</artifactId>

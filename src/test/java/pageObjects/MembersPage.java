@@ -15,7 +15,9 @@ public class MembersPage {
 	By membersHeaderLink = By.xpath("//a[contains(text(),'Members')]");
 	By membersList = By.xpath("//div[contains(@class,'infinite-scroll-component')]");
 	By firstMember = By.xpath("//div[contains(@class,'infinite-scroll-component')]//div[1]//a[1]");
+	By firstMemberSpan = By.xpath("//span[@class='wod-members__list-header']");
 	By membersSearchBox = By.xpath("//input[@placeholder='All members']");
+	By noMembersHeader = By.xpath("//h3[contains(text(),'No members yet')]");
 	By createNewMember = By.xpath("//div[@class='wod-fab']//a");
 	By memberNameField = By.xpath("//input[@id='name']");
 	By memberSurnameField = By.xpath("//input[@id='surname']");
@@ -39,7 +41,9 @@ public class MembersPage {
 	public WebElement getMembersSearchBox() {
 		return driver.findElement(membersSearchBox);
 	}
-	
+
+	public WebElement getNoMembersHeader() { return  driver.findElement(noMembersHeader); }
+
 	public WebElement getCreateNewMember() {
 		return driver.findElement(createNewMember);
 	}
@@ -89,6 +93,8 @@ public class MembersPage {
 	}
 
 	public WebElement getFirstMember() {return  driver.findElement(firstMember); }
+
+	public WebElement getFirstMemberSpan() { return  driver.findElement(firstMemberSpan); }
 
 	public WebElement getLogoutButton() {return  driver.findElement(logoutButton);}
 

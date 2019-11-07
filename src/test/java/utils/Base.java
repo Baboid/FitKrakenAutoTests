@@ -2,6 +2,7 @@ package utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Base {
 
 	public static WebDriver driver;
-	public Properties prop;
+	public static Properties prop;
 
 	public WebDriver initilizeDriver() throws IOException {
 
@@ -52,13 +53,11 @@ public class Base {
 	}
 
 
-	public CharSequence createUniqueEmail() {
+	public String createUniqueEmail() {
 		Fairy fairy = Fairy.create();
 		Person person = fairy.person();
-//
-//		CharSequence uniqueEmail = new StringBuffer(person.firstName() + "@getnada.com");
-//		return uniqueEmail;
-		return person.firstName() + "@getnada.com";
+		Date d1 = new Date();
+		return person.firstName() + d1.getTime() + "@getnada.com";
 	}
 
 
